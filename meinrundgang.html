@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Mein Rundgang</title>
+    <style>
+        .image_plane {
+            width: 95vw;
+            height: 95vh;
+            background-color: rgb(211, 211, 81);
+            background-size: cover;
+        }
+
+        .image_plane:not(.active) {
+            display: none;
+        }
+
+        .img1 {
+            background-image: url("./img1.jpg");
+        }
+
+        .img2 {
+            background-image: url("./img2.jpg");
+        }
+
+        .floor_button {
+            background: #c0bcbc5c;
+            border: none;
+            width: 2rem;
+            height: 2rem;
+            box-shadow: 0 0 1px 3px aliceblue;
+            border-radius: 50%;
+            transform: rotate3d(1, 1, 2, 266deg);
+        }
+    </style>
+    <script>
+        function changeImage(sNewImageId) {
+            var images = document.querySelectorAll('body>div.image_plane');
+            for (var i = 0; i < images.length; i++) {
+                images[i].classList.remove('active');
+            }
+
+            var newImage = document.getElementById(sNewImageId);
+            newImage.classList.add('active');
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="img1" class="image_plane img1 active">
+        <button onclick="changeImage('img2')" class="floor_button" title="weiter"
+            style="position: absolute; top: 45%; left:26%;"></button>
+    </div>
+
+    <div id="img2" class="image_plane img2">
+        <button onclick="changeImage('img1')" class="floor_button" title="weiter"
+            style="position: absolute; top: 45%; left:26%;"></button>
+    </div>
+
+</body>
+
+</html>
