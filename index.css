@@ -1,0 +1,28 @@
+.image_plane {
+  width: 95vw;
+  height: 95vh;
+  background-color: rgb(211, 211, 81);
+  background-size: cover;
+}
+
+.image_plane:not(.active) {
+    display: none;
+}
+
+.img1 {
+  background-image: url("./img1.jpg");
+}
+
+.img2 {
+  background-image: url("./img2.jpg");
+}
+
+.floor_button {
+  background: #c0bcbc5c;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 0 0 1px 3px aliceblue;
+  border-radius: 50%;
+  transform: rotate3d(1, 1, 2, 266deg);
+}
